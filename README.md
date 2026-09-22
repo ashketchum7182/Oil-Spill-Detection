@@ -98,6 +98,10 @@ decision.
 
 ## Running locally
 
+**Requires Python 3.11, 3.12, or 3.13.** Python 3.14+ won't work because
+`scikit-learn==1.6.1` (needed to load `oil_spill_detector.pkl`) has no 3.14
+build, and 3.10 or older is too old for the pinned `numpy`/`pandas`.
+
 The pipeline itself (stages 1-5) is a plain Python module and can be run or
 imported directly:
 

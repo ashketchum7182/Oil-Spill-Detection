@@ -1,4 +1,6 @@
 # Core pipeline dependencies for oil_spill_pipeline.py
+# Supported Python: 3.11-3.13 (tested install on 3.11; 3.14 has no
+# scikit-learn 1.6.1 wheel; numpy 2.4 / pandas 3.0 need >= 3.11).
 # scikit-learn is pinned to the version oil_spill_detector.pkl was actually
 # trained with (confirmed via unpickling warning: "Trying to unpickle
 # estimator StandardScaler from version 1.6.1"). Do not bump this without
@@ -13,8 +15,7 @@ tifffile==2026.3.3
 rasterio==1.4.4
 Pillow==12.2.0
 
-# Not installed in the environment this was pinned from; versions below are
-# pip's current dry-run resolution against the pins above (confirmed
-# conflict-free), not read from an installed package.
+# Originally pinned from pip's dry-run resolution; since verified by a clean
+# venv install (Python 3.11) with oil_spill_pipeline.py importing cleanly.
 pyproj==3.7.2
 scikit-image==0.26.0
