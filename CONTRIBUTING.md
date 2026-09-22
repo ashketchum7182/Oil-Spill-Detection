@@ -68,6 +68,11 @@ You should see **origin** (your fork) and **upstream** (the main repo).
 
 ### Step 6 (optional): Set up Python
 
+You need **Python 3.11, 3.12, or 3.13**. Python 3.14 will fail with
+`No matching distribution found for scikit-learn==1.6.1`. Check your version
+with `python --version`. If you have several versions installed on Windows,
+pick one with `py -3.13 -m venv venv` instead of the first line below.
+
 ```bash
 python -m venv venv
 source venv/Scripts/activate   # Windows (Git Bash)
