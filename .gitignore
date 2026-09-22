@@ -1,0 +1,10 @@
+# Large data files fetched at runtime, not tracked in git
+Radar_data.rar
+train/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
