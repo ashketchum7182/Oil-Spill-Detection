@@ -5,14 +5,52 @@ the most likely responsible vessel using nearby AIS (Automatic Identification
 System) ship-tracking data.
 
 Trained and evaluated on 14 real Sentinel-1 SAR image/mask pairs from Gulf of
-Mexico spills (2018-2020), from Trujillo-Acatitla et al. (2024), Zenodo record
-4672426, "Oil Spill Segmentation," CC-BY-4.0.
+Mexico spills (2018-2020), from the "Oil Spill Segmentation" dataset by
+William Alberto Ramirez (Zenodo record 4672426, CC-BY-4.0). See
+[Dataset](#dataset).
 
 ## What it does
 
 Given a SAR image patch, the pipeline decides whether it shows an oil spill,
 and if so, converts the detection to a real-world location and scores nearby
 vessels by how likely each one is to be the source.
+
+## Dataset
+
+**Oil Spill Segmentation** — William Alberto Ramirez, Zenodo, 2021.
+DOI: [10.5281/zenodo.4672426](https://doi.org/10.5281/zenodo.4672426) ·
+Record: https://zenodo.org/records/4672426 · License: CC-BY-4.0
+
+Sentinel-1A GRD (VV polarization) SAR images paired with oil-spill masks for
+23 Gulf of Mexico spill scenes (2018-2020). The masks were drawn from
+high-confidence NOAA spill reports; the radar images come from the Copernicus
+Open Access Hub.
+
+**Why this dataset:**
+
+- **Real SAR imagery with verified labels.** Oil dampens surface ripples and
+  shows up as dark patches in SAR, which works day or night and through
+  cloud. The masks come from confirmed NOAA reports rather than guesses, so
+  the detector learns from real spills.
+- **Georeferenced images.** Each source image carries UTM (EPSG:32616)
+  metadata, which is what lets stage 3 turn a detected patch into real
+  lat/long for AIS matching.
+- **Gulf of Mexico.** A busy shipping and offshore-drilling region, which
+  fits the goal of attributing spills to nearby vessels.
+- **Ready-made patch index.** The dataset ships the patch-coordinate CSVs
+  (`dataframe_*_256_90.csv`) that stage 1 uses to crop 256x256 patches.
+- **Open license.** CC-BY-4.0 allows reuse with attribution.
+
+**Getting it:** the archive (`Radar_data.rar`, ~490 MB) is too large for
+GitHub and is not stored in this repo. `OilSpill_backend.ipynb` downloads and
+extracts it automatically on first run. To run the pipeline locally,
+download it from the Zenodo record above and extract it so these paths exist:
+
+```
+train/images/*.tif
+train/dataframe_train_dataset_256_90.csv
+train/dataframe_val_dataset_256_90.csv
+```
 
 ## The 5-stage pipeline
 
