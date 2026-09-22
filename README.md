@@ -5,8 +5,9 @@ the most likely responsible vessel using nearby AIS (Automatic Identification
 System) ship-tracking data.
 
 Trained and evaluated on 14 real Sentinel-1 SAR image/mask pairs from Gulf of
-Mexico spills (2018-2020), from Trujillo-Acatitla et al. (2024), Zenodo record
-4672426, "Oil Spill Segmentation," CC-BY-4.0.
+Mexico spills (2018-2020), from the "Oil Spill Segmentation" dataset by
+William Alberto Ramirez (Zenodo record 4672426, CC-BY-4.0). See
+[Dataset](#dataset).
 
 ## What it does
 
