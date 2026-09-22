@@ -131,3 +131,12 @@ ngrok tunnel; there is no local-only entry point for the backend yet.
 ## Docker
 
 Not yet done. Docker packaging is planned as a separate, later task.
+
+## Roadmap & business potential
+
+See [SCALING_AND_BUSINESS.md](SCALING_AND_BUSINESS.md) for the scaling
+roadmap and target industries/customers (India and international).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
